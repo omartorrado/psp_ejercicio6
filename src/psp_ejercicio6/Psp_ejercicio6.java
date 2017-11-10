@@ -24,12 +24,21 @@ public class Psp_ejercicio6 {
         en el propio hilo y no en un objeto al que accedan ambos hilos, como es el caso de cajaC
         */
         
+        /*
+        Caja c funciona de casualidad, pero no está realmente sincronizado (ver CajaC.java)
+        */
+        //CajaC caja=new CajaC();
+        //CajaCProductor prod=new CajaCProductor(caja);
+        //CajaCConsumidor cons=new CajaCConsumidor(caja);
+        //prod.start();
+        //cons.start();
         
-        CajaC caja=new CajaC();
-        CajaCProductor prod=new CajaCProductor(caja);
-        CajaCConsumidor cons=new CajaCConsumidor(caja);
-        prod.start();
-        cons.start();
+        CajaD caja=new CajaD();
+        HiloD productor1=new HiloD(caja,true);
+        HiloD consumidor1=new HiloD(caja,false);
+
+        productor1.start();
+        consumidor1.start();
     }
     
 }

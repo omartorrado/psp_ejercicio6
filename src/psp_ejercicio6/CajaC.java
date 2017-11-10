@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Esto funciona, pero no esta realmente syncronizado. Al sincronizar lo que sincronizas es el metodo.
+Cualquier hilo que llame a ese metodo se meteria en la cola del metodo, tal como lo tengo hecho hay 
+dos colas, una del metodo ingresar y otra del metodo retirar. Funciona de cierta manera, pq el while
+de retirar sale del wait() cuando el saldo es suficiente, no pq reciba el notify de ingresar()
  */
 package psp_ejercicio6;
 
