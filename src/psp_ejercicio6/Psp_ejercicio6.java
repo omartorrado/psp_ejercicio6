@@ -39,6 +39,11 @@ public class Psp_ejercicio6 {
 
         productor1.start();
         consumidor1.start();
+        HiloD productor2=new HiloD(caja,true);
+        HiloD consumidor2=new HiloD(caja,false);
+
+        productor2.start();
+        consumidor2.start();
     }
     
 }

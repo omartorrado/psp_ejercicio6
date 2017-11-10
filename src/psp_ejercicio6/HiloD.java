@@ -25,11 +25,11 @@ public class HiloD extends Thread{
     public void run() {
         for(int i=0;i<10;i++){
             caja.balance(productor);
-//            try {
-//                sleep(50);
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(HiloD.class.getName()).log(Level.SEVERE, null, ex);
-//            }
+            try {
+                sleep(50);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(HiloD.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         System.out.println("Hilo finalizado");
     }
