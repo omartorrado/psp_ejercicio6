@@ -34,16 +34,40 @@ public class Psp_ejercicio6 {
         //cons.start();
         
         CajaD caja=new CajaD();
-        HiloD productor1=new HiloD(caja,true);
-        HiloD consumidor1=new HiloD(caja,false);
+        HiloD productor1=new HiloD("p1",caja,true);
+        HiloD consumidor1=new HiloD("c1",caja,false);
 
         productor1.start();
         consumidor1.start();
-        HiloD productor2=new HiloD(caja,true);
-        HiloD consumidor2=new HiloD(caja,false);
+        HiloD productor2=new HiloD("p2",caja,true);
+        HiloD consumidor2=new HiloD("c2",caja,false);
 
         productor2.start();
         consumidor2.start();
+        
+        HiloD productor3=new HiloD("p3",caja,true);
+        HiloD consumidor3=new HiloD("c3",caja,false);
+
+        productor3.start();
+        consumidor3.start();
+        
+        HiloD productor4=new HiloD("p4",caja,true);
+        HiloD consumidor4=new HiloD("c4",caja,false);
+
+        productor4.start();
+        consumidor4.start();
+        
+        HiloD productor5=new HiloD("p5",caja,true);
+        HiloD consumidor5=new HiloD("c5",caja,false);
+
+        productor5.start();
+        consumidor5.start();
+        
+        HiloD productor6=new HiloD("p6",caja,true);
+        HiloD consumidor6=new HiloD("c6",caja,false);
+
+        productor6.start();
+        consumidor6.start();
     }
     
 }

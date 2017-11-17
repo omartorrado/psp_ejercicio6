@@ -16,7 +16,8 @@ public class HiloD extends Thread{
     CajaD caja;
     boolean productor;
     
-    public HiloD(CajaD c,boolean prod){
+    public HiloD(String nombre,CajaD c,boolean prod){
+        super(nombre);
         caja=c;
         productor=prod;
     }
@@ -24,14 +25,15 @@ public class HiloD extends Thread{
     @Override
     public void run() {
         for(int i=0;i<10;i++){
-            caja.balance(productor);
+            System.out.println("Hilo:"+this.getName());
+            caja.balance(productor,this.getName());
             try {
-                sleep(50);
+                sleep(500);
             } catch (InterruptedException ex) {
                 Logger.getLogger(HiloD.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        System.out.println("Hilo finalizado");
+        System.out.println("Hilo "+this.getName()+" finalizado");
     }
     
     

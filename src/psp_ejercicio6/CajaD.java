@@ -15,15 +15,17 @@ import java.util.logging.Logger;
 public class CajaD {
     int balance=0;
     
-    public synchronized void balance(boolean ingresar){
+    public synchronized void balance(boolean ingresar,String threadName){
         if(ingresar){
             balance+=1;
             System.out.println("Balance tras producir: "+balance);
             notify();            
         }else{
             if(balance<1){
-                try {
+                try {                    
+                    System.out.println("Esperando fondos");
                     wait();
+                    System.out.println(threadName+" ha dejado de esperar");
                 } catch (InterruptedException ex) {
                     Logger.getLogger(CajaD.class.getName()).log(Level.SEVERE, null, ex);
                 }                
